@@ -99,9 +99,9 @@ export default function Alunos() {
                <ul> 
                {filtro.map(aluno => (
                     <li key={aluno.Id}>
-                        <b>Nome:</b>{aluno.nome}<br/><br/>
+                        <b>Nome:</b>{aluno.name}<br/><br/>
                         <b>Email:</b>{aluno.email}<br/><br/>
-                        <b>Idade:</b>{aluno.idade}<br/><br/>
+                        <b>Idade:</b>{aluno.age}<br/><br/>
                         <button onClick={()=> editAluno(aluno.id)} type="button">
                             <FiEdit size="25" color="#17202a" />
                         </button>
@@ -115,9 +115,9 @@ export default function Alunos() {
             <ul>
                {alunos.map(aluno=>(
                  <li key={aluno.id}>
-                  <b>Nome:</b>{aluno.nome}<br/><br/>
+                  <b>Nome:</b>{aluno.name}<br/><br/>
                   <b>Email:</b>{aluno.email}<br/><br/>
-                  <b>Idade:</b>{aluno.idade}<br/><br/>
+                  <b>Idade:</b>{aluno.age}<br/><br/>
 
                  <button onClick={()=> editAluno(aluno.id)} type="button">
                      <FiEdit size="25" color="#17202a" />

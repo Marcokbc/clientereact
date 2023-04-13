@@ -16,10 +16,10 @@ export default function App() {
         <Route exact path="/" element={<Login/>}></Route>
       </Routes>
       <Routes>
-        <Route exact path="/alunos" element={<Alunos/>}></Route>
+        <Route path="/alunos" element={<Alunos/>}></Route>
       </Routes>
       <Routes>
-        <Route path="/aluno/novo/:alunoId" element={<NovoAluno/>}></Route>
+        <Route path="alunos/aluno/novo/:alunoId" element={<NovoAluno/>}></Route>
       </Routes>
     </Router>
   );

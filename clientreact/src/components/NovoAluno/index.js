@@ -6,9 +6,9 @@ import api from '../../services/api';
 
 export default function NovoAluno(){
     const [id,setId] = useState(null);
-    const [nome, setNome] = useState('');
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [idade, setIdade] = useState(0);
+    const [age, setAge] = useState(0);
 
     const {alunoId} = useParams();
     const history = useNavigate();
@@ -33,9 +33,9 @@ export default function NovoAluno(){
          const response = await api.get(`api/alunos/${alunoId}`,authorization) ;
 
          setId(response.data.id);
-         setNome(response.data.nome);
+         setName(response.data.name);
          setEmail(response.data.email);
-         setIdade(response.data.idade);
+         setAge(response.data.age);
        }catch(error){
          alert('Erro ao recuperar o aluno ' + error);
          history('/alunos');
@@ -46,9 +46,9 @@ export default function NovoAluno(){
          event.preventDefault();
 
          const data = {
-            nome,
+            name,
             email,
-            idade
+            age
          }
 
          try{
@@ -79,16 +79,16 @@ export default function NovoAluno(){
             
             <form onSubmit={saveOrUpdate}>
                <input  placeholder="Nome" 
-                  value={nome}
-                  onChange= {e=> setNome(e.target.value)}
+                  value={name}
+                  onChange= {e=> setName(e.target.value)}
                />
                <input  placeholder="Email" 
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                />
                <input  placeholder="Idade" 
-                  value={idade}
-                  onChange={e => setIdade(e.target.value)}
+                  value={age}
+                  onChange={e => setAge(e.target.value)}
                />
                   <button className="button" type="submit">{alunoId === '0'? 'Incluir ' : 'Atualizar '}</button>
             </form>
